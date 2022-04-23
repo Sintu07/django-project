@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud|| Home</title>
+    <link rel="stylesheet" href="{% static 'app1/style.css' %}">
+</head>
+<body>
+    <button style="margin: 20px; border: 2px solid; padding: 2px;">
+        <a href="/signup/"> New Record</a>
+    </button>
+
+    <table style="margin: 5px;">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for data in Data %}
+        <tr>
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.salary}}</td>
+            <td>{{data.city}}</td>
+            <td>{{data.state}}</td>
+            <td><a href="/update/">Update</a></td>
+            <td><a href="#">Delete</a></td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</body>
+</html>
